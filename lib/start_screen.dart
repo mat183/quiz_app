@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class StartScreen extends StatelessWidget {
   const StartScreen(this.switchScreen, {super.key});
 
-  final VoidCallback switchScreen;
+  final void Function() switchScreen;
 
   @override
   Widget build(BuildContext context) {
