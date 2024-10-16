@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen(this.switchScreen, {super.key});
+  const StartScreen({super.key, required this.onStart});
 
-  final void Function() switchScreen;
+  final void Function() onStart;
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +18,16 @@ class StartScreen extends StatelessWidget {
             color: const Color.fromARGB(150, 255, 255, 255),
           ),
           const SizedBox(height: 80),
-          const Text(
+          Text(
             'Learn Flutter the fun way!',
-            style: TextStyle(
+            style: GoogleFonts.lato(
               fontSize: 24,
               color: Color.fromARGB(255, 243, 222, 222),
             ),
           ),
           const SizedBox(height: 30),
           OutlinedButton.icon(
-            onPressed: switchScreen,
+            onPressed: onStart,
             style: OutlinedButton.styleFrom(
               foregroundColor: const Color.fromARGB(255, 243, 222, 222),
             ),
