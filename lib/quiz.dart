@@ -25,10 +25,6 @@ class _QuizState extends State<Quiz> {
 
   void startQuiz() {
     switchScreen('questions-screen');
-  }
-
-  void repeatQuiz() {
-    switchScreen('start-screen');
     setState(() {
       selectedAnswers = [];
     });
@@ -53,7 +49,7 @@ class _QuizState extends State<Quiz> {
     } else if (screenId == 'results-screen') {
       activeScreen = ResultsScreen(
         answers: selectedAnswers,
-        onRepeat: repeatQuiz,
+        onRepeat: startQuiz,
       );
     }
 
