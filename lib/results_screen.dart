@@ -1,5 +1,5 @@
 import 'package:adv_basics/data/questions.dart';
-import 'package:adv_basics/questions_summary.dart';
+import 'package:adv_basics/questions_summary/questions_summary.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,7 +10,7 @@ class ResultsScreen extends StatelessWidget {
   final List<String> answers;
   final void Function() onRepeat;
 
-  List<Map<String, Object>> getSummaryData() {
+  List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> summary = [];
 
     for (int i = 0; i < answers.length; i++) {
@@ -27,7 +27,6 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final summaryData = getSummaryData();
     final int allAnswers = answers.length;
     final int correctAnswers = summaryData
         .where((data) => data['correct_answer'] == data['selected_answer'])
